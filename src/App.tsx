@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { ColorPalette } from '@/pages/ColorPalette'
 import { Home } from '@/pages/Home'
 import { Liveries } from '@/pages/Liveries'
+import { LiveryDetail } from '@/pages/LiveryDetail'
 import { ThemeShowcase } from '@/pages/ThemeShowcase'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
@@ -24,6 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/liveries" element={<Liveries />} />
         <Route path="/liveries/:filterType/:filterValue" element={<Liveries />} />
+        <Route path="/livery/:id" element={<LiveryDetail />} />
         {THEMES.map((theme) => (
           <Route key={theme} path={`/${theme}`} element={<ThemeRoute theme={theme} />} />
         ))}

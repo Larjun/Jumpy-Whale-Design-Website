@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import type { LiveryClassDef } from '@/lib/liverylist'
 import { ikSrcSet, ikUrl } from '@/lib/imagekit'
 
@@ -19,14 +20,14 @@ function LiveryCard({
   const path = `liveries/${photoName}_${thumbnailImg}.jpg`
 
   return (
-    <div key={id} className="overflow-hidden rounded-xl bg-card">
-      <div className="relative aspect-video w-full bg-muted">
+    <Link to={`/livery/${id}`} className="group overflow-hidden rounded-xl bg-card">
+      <div className="relative aspect-video w-full bg-muted overflow-hidden">
         <img
           src={ikUrl(path, { width: 400, quality: 70 })}
           srcSet={ikSrcSet(path)}
           sizes="(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 44vw"
           alt={name}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           loading="lazy"
           decoding="async"
         />
@@ -39,7 +40,7 @@ function LiveryCard({
           <span>{game}</span>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
