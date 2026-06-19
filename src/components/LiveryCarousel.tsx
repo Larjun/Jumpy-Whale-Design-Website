@@ -69,7 +69,7 @@ export function LiveryCarousel() {
 
       <section
         aria-label="Featured works carousel"
-        className="relative overflow-hidden rounded-xl"
+        className="group relative overflow-hidden rounded-xl"
         onMouseEnter={stopTimer}
         onMouseLeave={startTimer}
       >
@@ -110,6 +110,34 @@ export function LiveryCarousel() {
             </div>
           ))}
         </div>
+
+        {/* prev / next arrows */}
+        <button
+          type="button"
+          aria-label="Previous slide"
+          onClick={() => {
+            go(current - 1)
+            startTimer()
+          }}
+          className="absolute top-0 bottom-0 left-0 flex w-16 items-center justify-center bg-linear-to-r from-black/50 to-transparent text-white opacity-0 transition-opacity duration-300 hover:opacity-100"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Next slide"
+          onClick={() => {
+            go(current + 1)
+            startTimer()
+          }}
+          className="absolute top-0 right-0 bottom-0 flex w-16 items-center justify-center bg-linear-to-l from-black/50 to-transparent text-white opacity-0 transition-opacity duration-300 hover:opacity-100"
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
 
         {/* dot indicators */}
         <div className="absolute bottom-18 left-1/2 flex -translate-x-1/2 gap-2">
