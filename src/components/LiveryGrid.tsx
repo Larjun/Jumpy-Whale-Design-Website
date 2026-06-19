@@ -1,5 +1,5 @@
 import type { LiveryClassDef } from '@/lib/liverylist'
-import { ikUrl } from '@/lib/imagekit'
+import { ikSrcSet, ikUrl } from '@/lib/imagekit'
 
 function LiveryCard({
   id,
@@ -16,12 +16,20 @@ function LiveryCard({
   photoName: string
   thumbnailImg: number
 }) {
-  const src = ikUrl(`liveries/${photoName}_${thumbnailImg}.jpg`)
+  const path = `liveries/${photoName}_${thumbnailImg}.jpg`
 
   return (
     <div key={id} className="overflow-hidden rounded-xl bg-card">
       <div className="relative aspect-video w-full bg-muted">
-        <img src={src} alt={name} className="h-full w-full object-cover" loading="lazy" />
+        <img
+          src={ikUrl(path, { width: 400, quality: 70 })}
+          srcSet={ikSrcSet(path)}
+          sizes="(min-width: 1024px) 20vw, (min-width: 640px) 28vw, 44vw"
+          alt={name}
+          className="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="p-3">
         <p className="text-sm leading-tight font-semibold">{name}</p>

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { LIVERIES } from '@/lib/liverylist'
-import { ikUrl } from '@/lib/imagekit'
+import { ikSrcSet, ikUrl } from '@/lib/imagekit'
 
 const FEATURED = LIVERIES.filter((l) => l.isFeatured)
 const AUTOSCROLL_INTERVAL = 8000
@@ -76,20 +76,33 @@ export function LiveryCarousel() {
         <div
           role="group"
           aria-label="Slides"
-          className="flex transition-transform duration-500 ease-in-out"
+          className="flex transform-gpu transition-transform duration-500 ease-in-out will-change-transform"
           onMouseDown={(e) => onDragStart(e.clientX)}
           onMouseUp={(e) => onDragEnd(e.clientX)}
           onTouchStart={(e) => onDragStart(e.touches[0].clientX)}
           onTouchEnd={(e) => onDragEnd(e.changedTouches[0].clientX)}
           style={{ transform: `translateX(-${current * 100}%)` }}
         >
-          {FEATURED.map((livery) => (
+          {FEATURED.map((livery, i) => {
+            const path = `liveries/${livery.photoName}_${livery.thumbnailImg}.jpg`
+            // Eagerly load the first slide and its immediate neighbours so a
+            // transition never reveals an undecoded image; lazy-load the rest.
+            const priority =
+              i === 0 ||
+              i === (current + 1) % FEATURED.length ||
+              i === (current - 1 + FEATURED.length) % FEATURED.length
+            return (
             <div key={livery.id} className="min-w-0 flex-[0_0_100%]">
               <img
-                src={ikUrl(`liveries/${livery.photoName}_${livery.thumbnailImg}.jpg`)}
+                src={ikUrl(path, { width: 1600, quality: 70 })}
+                srcSet={ikSrcSet(path, 70, true)}
+                sizes="100vw"
                 alt={livery.name}
                 width={1920}
                 height={1080}
+                loading={priority ? 'eager' : 'lazy'}
+                fetchPriority={i === current ? 'high' : 'auto'}
+                decoding="async"
                 className="block h-auto w-full"
                 draggable={false}
               />
@@ -108,7 +121,8 @@ export function LiveryCarousel() {
                 </div>
               </div>
             </div>
-          ))}
+            )
+          })}
         </div>
 
         {/* prev / next arrows */}
