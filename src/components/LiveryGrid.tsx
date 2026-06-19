@@ -1,4 +1,4 @@
-import { LIVERIES } from '@/lib/liverylist'
+import type { LiveryClassDef } from '@/lib/liverylist'
 import { ikUrl } from '@/lib/imagekit'
 
 function LiveryCard({
@@ -35,15 +35,17 @@ function LiveryCard({
   )
 }
 
-export function LiveryGrid() {
+export function LiveryGrid({ liveries, title }: { liveries: LiveryClassDef[]; title?: string }) {
   return (
     <section className="mx-auto w-[90%] pt-4 pb-32">
-      <p className="mb-10 text-3xl font-semibold tracking-[0.10em] text-brand-turquoise uppercase">
-        Featured works
-      </p>
+      {title && (
+        <p className="mb-10 text-3xl font-semibold tracking-widest text-brand-turquoise uppercase">
+          {title}
+        </p>
+      )}
 
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {LIVERIES.map((livery) => (
+        {liveries.map((livery) => (
           <LiveryCard key={livery.id} {...livery} />
         ))}
       </div>

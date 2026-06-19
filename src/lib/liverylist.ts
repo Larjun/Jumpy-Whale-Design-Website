@@ -65,4 +65,4 @@ function parseLiveryCsv(csv: string): LiveryClassDef[] {
   })
 }
 
-export const LIVERIES: LiveryClassDef[] = parseLiveryCsv(csvText)
+export const LIVERIES: LiveryClassDef[] = parseLiveryCsv(csvText).sort((a, b) => b.id - a.id)

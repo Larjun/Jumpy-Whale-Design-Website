@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import Lenis from 'lenis'
 import { LazyMotion, domAnimation, m, MotionConfig } from 'framer-motion'
-import { Button } from '@/components/ui/button'
 import { LiveryCarousel } from '@/components/LiveryCarousel'
-import { LiveryGrid } from '@/components/LiveryGrid'
+import { FilterSection } from '@/components/FilterSection'
 
 export function Home() {
   const lenisRef = useRef<Lenis | null>(null)
@@ -61,9 +61,12 @@ export function Home() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45 }}
             >
-              <Button variant="outline" className="px-8 py-5 text-base">
+              <Link
+                to="/liveries"
+                className="rounded-xl border border-border px-8 py-3 text-base font-medium transition-colors hover:bg-card"
+              >
                 View all work
-              </Button>
+              </Link>
             </m.div>
 
             {/* scroll hint */}
@@ -79,7 +82,7 @@ export function Home() {
           </section>
 
           <LiveryCarousel />
-          <LiveryGrid />
+          <FilterSection />
         </div>
       </MotionConfig>
     </LazyMotion>
