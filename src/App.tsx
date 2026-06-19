@@ -1,6 +1,9 @@
-import { Navigate, NavLink, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { ColorPalette } from '@/pages/ColorPalette'
+import { Home } from '@/pages/Home'
 import { ThemeShowcase } from '@/pages/ThemeShowcase'
+import { Footer } from '@/components/Footer'
+import { Header } from '@/components/Header'
 
 const THEMES = ['blue', 'pink', 'turquoise', 'white'] as const
 
@@ -15,42 +18,15 @@ function ThemeRoute({ theme }: { theme: (typeof THEMES)[number] }) {
 function App() {
   return (
     <>
-      <nav className="sticky top-0 z-10 flex justify-center gap-4 border-b border-border bg-background py-4">
-        {THEMES.map((theme) => (
-          <NavLink
-            key={theme}
-            to={`/${theme}`}
-            className={({ isActive }) =>
-              `rounded-full px-3 py-1 text-sm capitalize transition-colors ${
-                isActive
-                  ? 'bg-foreground text-background'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`
-            }
-          >
-            {theme}
-          </NavLink>
-        ))}
-        <NavLink
-          to="/palette"
-          className={({ isActive }) =>
-            `rounded-full px-3 py-1 text-sm transition-colors ${
-              isActive
-                ? 'bg-foreground text-background'
-                : 'text-muted-foreground hover:text-foreground'
-            }`
-          }
-        >
-          Palette
-        </NavLink>
-      </nav>
+      <Header />
       <Routes>
-        <Route path="/" element={<Navigate to="/blue" replace />} />
+        <Route path="/" element={<Home />} />
         {THEMES.map((theme) => (
           <Route key={theme} path={`/${theme}`} element={<ThemeRoute theme={theme} />} />
         ))}
         <Route path="/palette" element={<ColorPalette />} />
       </Routes>
+      <Footer />
     </>
   )
 }
