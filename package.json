@@ -18,6 +18,8 @@
     "@fontsource-variable/geist-mono": "^5.2.8",
     "@fontsource/geist": "^5.2.9",
     "@fontsource/geist-mono": "^5.2.8",
+    "@fontsource/montserrat": "^5.2.8",
+    "@fontsource/poppins": "^5.2.7",
     "@tailwindcss/vite": "^4.3.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

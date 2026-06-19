@@ -24,7 +24,7 @@ function LogoButton({ label, logo, to }: { label: string; logo: string; to: stri
       className="group flex flex-col items-center gap-3 rounded-xl bg-card p-5 transition-colors hover:bg-card/80"
     >
       <img src={logo} alt={label} className="h-12 w-auto object-contain" />
-      <span className="text-xs text-muted-foreground group-hover:text-foreground transition-colors">
+      <span className="font-heading text-xs text-muted-foreground group-hover:text-foreground transition-colors">
         {label}
       </span>
     </Link>

@@ -28,6 +28,12 @@ const TEAM_LABELS: Record<string, string> = {
   jwd: 'Jumpy Whale Design',
 }
 
+const TEAM_GRADIENTS: Record<string, [string, string]> = {
+  mhr: ['#3886c2', '#cb568b'],
+  srt: ['#AA032E', '#DAAD1F'],
+  jwd: ['#007fff', '#ff2680'],
+}
+
 export function Liveries() {
   const { filterType, filterValue } = useParams<{ filterType?: string; filterValue?: string }>()
 
@@ -65,20 +71,44 @@ export function Liveries() {
     }
   }
 
+  const teamGradient =
+    filterType === 'team' && filterValue
+      ? TEAM_GRADIENTS[filterValue.toLowerCase()]
+      : undefined
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto w-[90%] pt-12 pb-4">
-        <Link
-          to="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+      {teamGradient ? (
+        <div
+          className="relative flex min-h-56 items-end pb-8"
+          style={{
+            background: `linear-gradient(135deg, ${teamGradient[0]}, ${teamGradient[1]})`,
+            width: '100vw',
+            marginLeft: 'calc(50% - 50vw)',
+            paddingLeft: 'calc(50vw - 50%)',
+            paddingRight: 'calc(50vw - 50%)',
+          }}
         >
-          ← Back
-        </Link>
-        <h1 className="mt-4 text-3xl font-semibold tracking-widest text-brand-turquoise uppercase">
-          {title}
-        </h1>
-        <p className="mt-1 text-sm text-muted-foreground">{filteredLiveries.length} liveries</p>
-      </div>
+          {/* Centered heading */}
+          <div className="w-full text-center">
+            <h1 className="text-10xl tracking-tight text-white">{title}</h1>
+            <p className="mt-1 text-sm text-white/60">{filteredLiveries.length} liveries</p>
+          </div>
+        </div>
+      ) : (
+        <div className="mx-auto w-[90%] pt-12 pb-4">
+          <Link
+            to="/"
+            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            ← Back
+          </Link>
+          <h1 className="mt-4 text-5xl tracking-widest text-brand-turquoise uppercase">
+            {title}
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">{filteredLiveries.length} liveries</p>
+        </div>
+      )}
       <LiveryGrid liveries={filteredLiveries} />
     </div>
   )

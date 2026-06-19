@@ -40,7 +40,7 @@ export function Home() {
               transition={{ duration: 0.6, ease: 'easeOut' }}
             />
             <m.h1
-              className="mx-auto max-w-2xl text-5xl font-black tracking-tight text-foreground sm:text-xl"
+              className="mx-auto max-w-2xl text-4xl tracking-tight text-foreground sm:text-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.6 }}

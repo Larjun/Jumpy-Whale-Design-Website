@@ -57,7 +57,7 @@ export function LiveryDetail() {
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>
-          <h1 className="text-3xl font-black tracking-tight">{livery.name}</h1>
+          <h1 className="text-5xl tracking-tight">{livery.name}</h1>
           <div className="mt-3 flex flex-wrap gap-2">
             <Pill label={livery.team} />
             <Pill label={livery.game} />

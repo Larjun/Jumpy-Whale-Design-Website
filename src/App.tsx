@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import { ColorPalette } from '@/pages/ColorPalette'
 import { Home } from '@/pages/Home'
 import { Liveries } from '@/pages/Liveries'
@@ -17,9 +18,16 @@ function ThemeRoute({ theme }: { theme: (typeof THEMES)[number] }) {
   )
 }
 
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
+
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

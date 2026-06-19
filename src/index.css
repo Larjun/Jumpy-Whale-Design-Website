@@ -3,6 +3,18 @@
 @import 'shadcn/tailwind.css';
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/geist-mono';
+@import '@fontsource/poppins/300.css';
+@import '@fontsource/poppins/400.css';
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+@import '@fontsource/poppins/900.css';
+@import '@fontsource/montserrat/300.css';
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+@import '@fontsource/montserrat/800.css';
+@import '@fontsource/montserrat/900.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -99,8 +111,8 @@
   --social-bg: rgba(47, 48, 58, 0.5);
   --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, 'Montserrat', Poppins, Roboto, sans-serif;
+  --heading: system-ui, 'Montserrat', Poppins, Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
@@ -198,7 +210,7 @@ body {
   h1,
   h2 {
     font-family: var(--heading);
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-h);
   }
 
@@ -243,7 +255,7 @@ code {
 }
 
 @theme inline {
-  --font-heading: var(--font-sans);
+  --font-heading: 'Montserrat', sans-serif;
   --font-sans: 'Geist Variable', sans-serif;
   --font-mono: 'Geist Mono Variable', monospace;
   --color-brand: var(--brand);
