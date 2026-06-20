@@ -72,9 +72,7 @@ export function Liveries() {
   }
 
   const teamGradient =
-    filterType === 'team' && filterValue
-      ? TEAM_GRADIENTS[filterValue.toLowerCase()]
-      : undefined
+    filterType === 'team' && filterValue ? TEAM_GRADIENTS[filterValue.toLowerCase()] : undefined
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -97,19 +95,17 @@ export function Liveries() {
         </div>
       ) : (
         <div className="mx-auto w-[90%] pt-12 pb-4">
-          <h1 className="mt-4 text-5xl tracking-widest text-brand-turquoise uppercase">
-            {title}
-          </h1>
+          <h1 className="mt-4 text-5xl tracking-widest text-brand-turquoise uppercase">{title}</h1>
           <p className="mt-1 text-sm text-muted-foreground">{filteredLiveries.length} liveries</p>
           {filterValue?.toLowerCase() === 'iracing' && (
-            <a
-              href="https://www.tradingpaints.com/profile/1242280/Arjun-Lakshmi-Narasimhan2"
+            <Link
+              to="https://www.tradingpaints.com/profile/1242280/Arjun-Lakshmi-Narasimhan2"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground hover:bg-brand-dark transition-colors"
+              className="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand-dark"
             >
               View on Trading Paints
-            </a>
+            </Link>
           )}
         </div>
       )}

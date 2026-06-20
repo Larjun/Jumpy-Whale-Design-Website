@@ -21,7 +21,7 @@ function LiveryCard({
 
   return (
     <Link to={`/livery/${id}`} className="group overflow-hidden rounded-xl bg-card">
-      <div className="relative aspect-video w-full bg-muted overflow-hidden">
+      <div className="relative aspect-video w-full overflow-hidden bg-muted">
         <img
           src={ikUrl(path, { width: 400, quality: 70 })}
           srcSet={ikSrcSet(path)}

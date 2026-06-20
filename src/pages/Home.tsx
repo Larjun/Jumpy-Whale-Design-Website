@@ -72,6 +72,18 @@ export function Home() {
 
           <LiveryCarousel />
           <FilterSection />
+          <div className="mx-10 my-10">
+            <h2 className="mb-5">AI Policy</h2>
+            <p>
+              Generative AI will not be used to on the final product that is any livery distributed
+              or driven on track, unless the said AI happens to be an image of Italian Brainrot or
+              utterly cursed beyond human imagination like such Italian Brainrot, which case will be
+              used as Itasha. Everything else including regular decals, sponsors, design, anime
+              characters, memes, people and pets will be created by me or acquired through non
+              generative AI sources. I am firm believe of human ability and creating liveries is a
+              way to excersice my idea and passion for art and creation.
+            </p>
+          </div>
         </div>
       </MotionConfig>
     </LazyMotion>

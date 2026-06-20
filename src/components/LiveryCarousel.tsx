@@ -14,12 +14,9 @@ export function LiveryCarousel() {
       <Carousel autoplay autoplayInterval={8000} aria-label="Featured works carousel">
         {FEATURED.map((livery, i) => {
           const path = `liveries/${livery.photoName}_${livery.thumbnailImg}.jpg`
-          const priority =
-            i === 0 ||
-            i === 1 ||
-            i === FEATURED.length - 1
+          const priority = i === 0 || i === 1 || i === FEATURED.length - 1
           return (
-            <div>
+            <div key={livery.id}>
               <img
                 src={ikUrl(path, { width: 1600, quality: 70 })}
                 srcSet={ikSrcSet(path, 70, true)}

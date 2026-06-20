@@ -22,9 +22,9 @@ export function ikUrl(path: string, tr?: IkTransform): string {
 }
 
 /** Widths for full-bleed hero/carousel images. */
-export const IK_WIDTHS_HERO = [640, 960, 1280, 1600, 1920] as const
+const IK_WIDTHS_HERO = [640, 960, 1280, 1600, 1920] as const
 /** Widths for grid thumbnails — cards never exceed ~500px. */
-export const IK_WIDTHS_THUMB = [400, 640, 960] as const
+const IK_WIDTHS_THUMB = [400, 640, 960] as const
 
 export function ikSrcSet(path: string, quality = 70, hero = false): string {
   const widths = hero ? IK_WIDTHS_HERO : IK_WIDTHS_THUMB

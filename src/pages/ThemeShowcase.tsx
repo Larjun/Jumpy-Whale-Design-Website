@@ -48,7 +48,9 @@ export function ThemeShowcase({ themeName }: { themeName: string }) {
               className="mx-auto h-24 w-auto"
             />
             <h1 className="my-10 text-xl font-semibold">Simracing Liveries</h1>
-            <Button className="bg-brand text-brand-foreground hover:bg-brand-dark">Get in touch</Button>
+            <Button className="bg-brand text-brand-foreground hover:bg-brand-dark">
+              Get in touch
+            </Button>
           </m.section>
 
           <section className="mx-auto grid max-w-4xl gap-6 px-6 py-16 sm:grid-cols-3">

@@ -7,9 +7,7 @@ function Pill({ label, accent }: { label: string; accent?: boolean }) {
   return (
     <span
       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ${
-        accent
-          ? 'bg-brand-turquoise/15 text-brand-turquoise'
-          : 'bg-muted text-muted-foreground'
+        accent ? 'bg-brand-turquoise/15 text-brand-turquoise' : 'bg-muted text-muted-foreground'
       }`}
     >
       {label}
@@ -26,7 +24,10 @@ export function LiveryDetail() {
       <div className="flex min-h-screen items-center justify-center">
         <div className="text-center">
           <p className="text-2xl font-semibold">Livery not found</p>
-          <Link to="/liveries" className="mt-4 inline-block text-sm text-muted-foreground underline">
+          <Link
+            to="/liveries"
+            className="mt-4 inline-block text-sm text-muted-foreground underline"
+          >
             Back to liveries
           </Link>
         </div>
@@ -74,7 +75,7 @@ export function LiveryDetail() {
             src={ikUrl(path, { width: 1600, quality: 75 })}
             srcSet={ikSrcSet(path, 75, true)}
             sizes="(min-width: 1280px) 1152px, 90vw"
-            alt={`${livery.name} — photo ${i + 1}`}
+            alt={`${livery.name} — ${i + 1}`}
             width={1920}
             height={1080}
             loading={i === 0 ? 'eager' : 'lazy'}
@@ -95,7 +96,7 @@ export function LiveryDetail() {
                 src={ikUrl(path, { width: 640, quality: 70 })}
                 srcSet={ikSrcSet(path)}
                 sizes="(min-width: 1280px) 370px, (min-width: 640px) 30vw, 44vw"
-                alt={`${livery.name} — photo ${i + 1}`}
+                alt={`${livery.name} — ${i + 1}`}
                 width={1920}
                 height={1080}
                 loading="lazy"
