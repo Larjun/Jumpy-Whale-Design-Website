@@ -37,13 +37,13 @@ export function Home() {
               className="mb-12 h-auto w-[85vw] max-w-3xl"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: 'easeOut' }}
+              transition={{ duration: 1.5, ease: 'easeOut' }}
             />
             <m.h1
               className="mx-auto max-w-2xl text-4xl tracking-tight text-foreground sm:text-3xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15, duration: 0.6 }}
+              transition={{ delay: 0.3, duration: 1.2 }}
             >
               Simracing Liveries
             </m.h1>
@@ -51,7 +51,7 @@ export function Home() {
               className="mt-6 max-w-md text-base text-muted-foreground"
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.6, duration: 1 }}
             >
               Custom simracing liveries for iRacing, ACC, Le Mans Ultimate and more.
             </m.p>
@@ -59,7 +59,7 @@ export function Home() {
               className="mt-10 flex flex-wrap justify-center gap-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.45 }}
+              transition={{ delay: 0.9 }}
             >
               <Link
                 to="/liveries"
@@ -67,17 +67,6 @@ export function Home() {
               >
                 View all work
               </Link>
-            </m.div>
-
-            {/* scroll hint */}
-            <m.div
-              className="absolute bottom-10 flex flex-col items-center gap-1 text-xs text-muted-foreground"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1 }}
-            >
-              <span>Scroll</span>
-              <div className="h-6 w-px bg-muted-foreground/40" />
             </m.div>
           </section>
 
