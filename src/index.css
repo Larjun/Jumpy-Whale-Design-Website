@@ -191,8 +191,7 @@
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  max-width: min(1500px, 90vw);
   margin: 0 auto;
   text-align: center;
   border-inline: 1px solid var(--border);

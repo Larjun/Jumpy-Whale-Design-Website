@@ -20,16 +20,16 @@ id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeature
 16,2025,MHR Turtles,MHR,ACC,FALSE,mhr_acc_turtles,6,,1,FALSE
 15,2025,MHR Retro Ferrari,MHR,ACC,FALSE,mhr_acc_pixelFezza,5,,1,FALSE
 14,2025,JWD Corvette C8R,JWD,LMU,FALSE,jwd_lmu_vette_1,5,https://www.racecontrol.gg/liveries/livery/6848ebf3401435e38a49e903/68a112b2d9b4a395fda6e92f,1,FALSE
-13,2024,MHR Beeeeeans,MHR,ACC,FALSE,mhr_acc_beans,4,https://discord.com/channels/915686674833498203/1234315286027567124/1300689000721551370,1,FALSE
-12,2024,JWD Ford Mustang GT3,JWD,ACC,FALSE,jwd_acc_mustang,5,https://discord.com/channels/915686674833498203/1234315286027567124/1293274064789569567,1,FALSE
-11,2024,MHR Jaws,MHR,ACC,FALSE,mhr_acc_jaws,5,https://discord.com/channels/347961635446718491/712799879717453834/1244714026479521912,1,FALSE
-10,2024,MHR Bottom Gun,MHR,ACC,FALSE,mhr_acc_bottomgun,8,https://discord.com/channels/347961635446718491/712799879717453834/1242720496290627625,1,FALSE
-9,2024,MHR Mutt Cutts,MHR,ACC,FALSE,mhr_acc_muttcutts,6,https://discord.com/channels/347961635446718491/712799879717453834/1242709515615604818,1,FALSE
-8,2024,MHR Streaming Service,MHR,ACC,FALSE,mhr_acc_streamerc,7,https://discord.com/channels/347961635446718491/712799879717453834/1242387703664873493,1,FALSE
-7,2024,MHR Dune Racing,MHR,ACC,FALSE,mhr_acc_dune,8,https://discord.com/channels/347961635446718491/712799879717453834/1242307475693109348,1,FALSE
-6,2024,MHR Termenghini,MHR,ACC,TRUE,mhr_acc_termenghini,5,https://discord.com/channels/347961635446718491/712799879717453834/1242244209663283232,1,FALSE
-5,2024,MHR Tow Cap Racing New,MHR,ACC,FALSE,mhr_acc_towcap_1,5,https://discord.com/channels/347961635446718491/712799879717453834/1202719655777665024,1,FALSE
-4,2024,MHR Tow Cap Racing Old,MHR,ACC,FALSE,mhr_acc_towcap_2,4,https://discord.com/channels/347961635446718491/712799879717453834/1202719655777665024,1,FALSE
-3,2024,SRT Macca 'n Cheese,SRT,ACC,FALSE,srt_acc_macca,4,https://discord.com/channels/925499708414234666/1022938133626622042/1218436919650943047,1,FALSE
-2,2023,SRT Freedom Porsche,SRT,ACC,FALSE,srt_acc_freedomPorsche,4,https://discord.com/channels/925499708414234666/1022938133626622042/1179662639283064853,1,FALSE
-1,2023,SRT RCI 24 Hours of Suzuka Special Porsche,SRT,ACC,FALSE,srt_acc_japanPorsche_1,5,https://discord.com/channels/925499708414234666/1022938133626622042/1172605716918456381,1,FALSE
+13,2024,MHR Beeeeeans,MHR,ACC,FALSE,mhr_acc_beans,4,,1,FALSE
+12,2024,JWD Ford Mustang GT3,JWD,ACC,FALSE,jwd_acc_mustang,5,,1,FALSE
+11,2024,MHR Jaws,MHR,ACC,FALSE,mhr_acc_jaws,5,,1,FALSE
+10,2024,MHR Bottom Gun,MHR,ACC,FALSE,mhr_acc_bottomgun,8,,1,FALSE
+9,2024,MHR Mutt Cutts,MHR,ACC,FALSE,mhr_acc_muttcutts,6,,1,FALSE
+8,2024,MHR Streaming Service,MHR,ACC,FALSE,mhr_acc_streamerc,7,,1,FALSE
+7,2024,MHR Dune Racing,MHR,ACC,FALSE,mhr_acc_dune,8,,1,FALSE
+6,2024,MHR Termenghini,MHR,ACC,TRUE,mhr_acc_termenghini,5,,1,FALSE
+5,2024,MHR Tow Cap Racing New,MHR,ACC,FALSE,mhr_acc_towcap_1,5,,1,FALSE
+4,2024,MHR Tow Cap Racing Old,MHR,ACC,FALSE,mhr_acc_towcap_2,4,,1,FALSE
+3,2024,SRT Macca 'n Cheese,SRT,ACC,FALSE,srt_acc_macca,4,,1,FALSE
+2,2023,SRT Freedom Porsche,SRT,ACC,FALSE,srt_acc_freedomPorsche,4,,1,FALSE
+1,2023,SRT RCI 24 Hours of Suzuka Special Porsche,SRT,ACC,FALSE,srt_acc_japanPorsche_1,5,,1,FALSE
