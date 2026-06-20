@@ -25,10 +25,11 @@ function ScrollToTop() {
 }
 
 function App() {
+  const { pathname } = useLocation()
   return (
     <>
       <ScrollToTop />
-      <Header />
+      {pathname !== '/' && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/liveries" element={<Liveries />} />

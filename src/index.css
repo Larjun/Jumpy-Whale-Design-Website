@@ -65,10 +65,10 @@
   --brand-white-foreground: #08060d;
 
   /* active theme, switch by setting data-theme="blue|pink|turquoise|white" on <html> */
-  --brand: var(--brand-blue);
-  --brand-light: var(--brand-blue-light);
-  --brand-dark: var(--brand-blue-dark);
-  --brand-foreground: var(--brand-blue-foreground);
+  --brand: var(--brand-turquoise);
+  --brand-light: var(--brand-turquoise-light);
+  --brand-dark: var(--brand-turquoise-dark);
+  --brand-foreground: var(--brand-turquoise-foreground);
 }
 
 [data-theme='blue'] {

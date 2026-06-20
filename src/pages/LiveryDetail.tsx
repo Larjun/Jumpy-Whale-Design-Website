@@ -43,17 +43,6 @@ export function LiveryDetail() {
 
   return (
     <main className="mx-auto w-[90%] max-w-6xl pt-8 pb-32">
-      {/* Back link */}
-      <Link
-        to="/liveries"
-        className="mb-8 inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-        All liveries
-      </Link>
-
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div>

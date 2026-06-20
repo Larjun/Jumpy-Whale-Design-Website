@@ -97,16 +97,20 @@ export function Liveries() {
         </div>
       ) : (
         <div className="mx-auto w-[90%] pt-12 pb-4">
-          <Link
-            to="/"
-            className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            ← Back
-          </Link>
           <h1 className="mt-4 text-5xl tracking-widest text-brand-turquoise uppercase">
             {title}
           </h1>
           <p className="mt-1 text-sm text-muted-foreground">{filteredLiveries.length} liveries</p>
+          {filterValue?.toLowerCase() === 'iracing' && (
+            <a
+              href="https://www.tradingpaints.com/profile/1242280/Arjun-Lakshmi-Narasimhan2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block rounded-md bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground hover:bg-brand-dark transition-colors"
+            >
+              View on Trading Paints
+            </a>
+          )}
         </div>
       )}
       <LiveryGrid liveries={filteredLiveries} />
