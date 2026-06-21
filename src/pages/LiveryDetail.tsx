@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { LIVERIES } from '@/lib/liverylist'
 import { ikSrcSet, ikUrl } from '@/lib/imagekit'
@@ -17,7 +18,19 @@ function Pill({ label, accent }: { label: string; accent?: boolean }) {
 
 export function LiveryDetail() {
   const { id } = useParams<{ id: string }>()
+  const [activeSlide, setActiveSlide] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
+
   const livery = LIVERIES.find((l) => l.id === Number(id))
+
+  useEffect(() => {
+    if (!lightboxOpen) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [lightboxOpen])
 
   if (!livery) {
     return (
@@ -41,6 +54,7 @@ export function LiveryDetail() {
     ...allIndices.filter((i) => i !== livery.thumbnailImg),
   ]
   const photos = orderedIndices.map((i) => `liveries/${livery.photoName}_${i}.jpg`)
+  const activePath = photos[activeSlide]
 
   return (
     <main className="mx-auto w-[90%] max-w-6xl pt-8 pb-32">
@@ -68,30 +82,64 @@ export function LiveryDetail() {
       </div>
 
       {/* Photo carousel */}
-      <Carousel aria-label={`${livery.name} photos`}>
-        {photos.map((path, i) => (
-          <img
-            key={path}
-            src={ikUrl(path, { width: 1600, quality: 75 })}
-            srcSet={ikSrcSet(path, 75, true)}
-            sizes="(min-width: 1280px) 1152px, 90vw"
-            alt={`${livery.name} — ${i + 1}`}
-            width={1920}
-            height={1080}
-            loading={i === 0 ? 'eager' : 'lazy'}
-            fetchPriority={i === 0 ? 'high' : 'auto'}
-            decoding="async"
-            className="block h-auto w-full"
-            draggable={false}
-          />
-        ))}
-      </Carousel>
+      <div className="group/carousel relative">
+        <Carousel
+          aria-label={`${livery.name} photos`}
+          slide={activeSlide}
+          onSlideChange={setActiveSlide}
+        >
+          {photos.map((path, i) => (
+            <img
+              key={path}
+              src={ikUrl(path, { width: 1600, quality: 75 })}
+              srcSet={ikSrcSet(path, 75, true)}
+              sizes="(min-width: 1280px) 1152px, 90vw"
+              alt={`${livery.name} — ${i + 1}`}
+              width={1920}
+              height={1080}
+              loading={i === 0 ? 'eager' : 'lazy'}
+              fetchPriority={i === 0 ? 'high' : 'auto'}
+              decoding="async"
+              className="block h-auto w-full"
+              draggable={false}
+            />
+          ))}
+        </Carousel>
+        <button
+          type="button"
+          aria-label="Expand image"
+          onClick={() => setLightboxOpen(true)}
+          className="absolute top-3 right-3 flex h-8 w-8 items-center justify-center rounded-md bg-black/50 text-white opacity-0 transition-opacity duration-200 group-hover/carousel:opacity-100 hover:bg-black/70"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <polyline points="15 3 21 3 21 9" />
+            <polyline points="9 21 3 21 3 15" />
+            <line x1="21" y1="3" x2="14" y2="10" />
+            <line x1="3" y1="21" x2="10" y2="14" />
+          </svg>
+        </button>
+      </div>
 
       {/* All photos grid */}
       {photos.length > 1 && (
         <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
           {photos.map((path, i) => (
-            <div key={path} className="overflow-hidden rounded-lg bg-muted">
+            <button
+              key={path}
+              type="button"
+              onClick={() => setActiveSlide(i)}
+              className="overflow-hidden rounded-lg bg-muted"
+            >
               <img
                 src={ikUrl(path, { width: 640, quality: 70 })}
                 srcSet={ikSrcSet(path)}
@@ -104,8 +152,50 @@ export function LiveryDetail() {
                 className="block h-auto w-full"
                 draggable={false}
               />
-            </div>
+            </button>
           ))}
+        </div>
+      )}
+
+      {/* Lightbox */}
+      {lightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white transition-colors hover:bg-white/20"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <img
+            src={ikUrl(activePath, { width: 1920, quality: 90 })}
+            srcSet={ikSrcSet(activePath, 90, true)}
+            sizes="100vw"
+            alt={`${livery.name} — ${activeSlide + 1}`}
+            width={1920}
+            height={1080}
+            decoding="async"
+            className="max-h-screen max-w-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+            draggable={false}
+          />
         </div>
       )}
     </main>
