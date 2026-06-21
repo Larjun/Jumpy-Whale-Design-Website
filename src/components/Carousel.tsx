@@ -1,4 +1,12 @@
-import { Children, useCallback, useEffect, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import {
+  Children,
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react'
 
 interface CarouselProps {
   children: ReactNode[]
@@ -28,14 +36,21 @@ export function Carousel({
   const stateRef = useRef({ current, count })
   const dragStartX = useRef<number | null>(null)
 
-  useLayoutEffect(() => { onSlideChangeRef.current = onSlideChange })
-  useLayoutEffect(() => { stateRef.current = { current, count } })
+  useLayoutEffect(() => {
+    onSlideChangeRef.current = onSlideChange
+  })
+  useLayoutEffect(() => {
+    stateRef.current = { current, count }
+  })
 
-  const go = useCallback((index: number) => {
-    const normalized = ((index % count) + count) % count
-    setInternalCurrent(normalized)
-    onSlideChangeRef.current?.(normalized)
-  }, [count])
+  const go = useCallback(
+    (index: number) => {
+      const normalized = ((index % count) + count) % count
+      setInternalCurrent(normalized)
+      onSlideChangeRef.current?.(normalized)
+    },
+    [count],
+  )
 
   const stopTimer = useCallback(() => {
     if (timerRef.current) {
@@ -63,7 +78,7 @@ export function Carousel({
     const onKey = (e: KeyboardEvent) => {
       const { current: curr, count: cnt } = stateRef.current
       if (e.key === 'ArrowRight') go((curr + 1) % cnt)
-      if (e.key === 'ArrowLeft') go(((curr - 1) % cnt + cnt) % cnt)
+      if (e.key === 'ArrowLeft') go((((curr - 1) % cnt) + cnt) % cnt)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
@@ -110,10 +125,23 @@ export function Carousel({
       <button
         type="button"
         aria-label="Previous slide"
-        onClick={() => { go(current - 1); startTimer() }}
+        onClick={() => {
+          go(current - 1)
+          startTimer()
+        }}
         className="absolute top-0 bottom-0 left-0 flex w-16 items-center justify-center bg-linear-to-r from-black/50 to-transparent text-white opacity-0 transition-opacity duration-300 hover:opacity-100"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <polyline points="15 18 9 12 15 6" />
         </svg>
       </button>
@@ -122,10 +150,23 @@ export function Carousel({
       <button
         type="button"
         aria-label="Next slide"
-        onClick={() => { go(current + 1); startTimer() }}
+        onClick={() => {
+          go(current + 1)
+          startTimer()
+        }}
         className="absolute top-0 right-0 bottom-0 flex w-16 items-center justify-center bg-linear-to-l from-black/50 to-transparent text-white opacity-0 transition-opacity duration-300 hover:opacity-100"
       >
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
           <polyline points="9 18 15 12 9 6" />
         </svg>
       </button>
@@ -138,7 +179,10 @@ export function Carousel({
               key={(s as React.ReactElement).key}
               type="button"
               aria-label={`Go to slide ${i + 1}`}
-              onClick={() => { go(i); startTimer() }}
+              onClick={() => {
+                go(i)
+                startTimer()
+              }}
               className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? 'w-6 bg-white' : 'w-1.5 bg-white/40'}`}
             />
           ))}

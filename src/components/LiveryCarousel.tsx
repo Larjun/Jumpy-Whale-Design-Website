@@ -1,6 +1,7 @@
 import { LIVERIES } from '@/lib/liverylist'
 import { ikSrcSet, ikUrl } from '@/lib/imagekit'
 import { Carousel } from '@/components/Carousel'
+import { Link } from 'react-router-dom'
 
 const FEATURED = LIVERIES.filter((l) => l.isFeatured)
 
@@ -16,7 +17,7 @@ export function LiveryCarousel() {
           const path = `liveries/${livery.photoName}_${livery.thumbnailImg}.jpg`
           const priority = i === 0 || i === 1 || i === FEATURED.length - 1
           return (
-            <div key={livery.id}>
+            <Link key={livery.id} to={`/livery/${livery.id}`}>
               <img
                 src={ikUrl(path, { width: 1600, quality: 70 })}
                 srcSet={ikSrcSet(path, 70, true)}
@@ -44,7 +45,7 @@ export function LiveryCarousel() {
                   )}
                 </div>
               </div>
-            </div>
+            </Link>
           )
         })}
       </Carousel>
