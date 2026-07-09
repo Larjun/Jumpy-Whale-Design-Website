@@ -61,7 +61,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;')
 }
 
-const csv = readFileSync(path.join(root, 'public', 'livery_list.csv'), 'utf8')
+const csv = readFileSync(path.join(root, 'src', 'livery_list.csv'), 'utf8')
 const liveries = parseLiveryCsv(csv)
 const template = readFileSync(path.join(distDir, 'index.html'), 'utf8')
 
