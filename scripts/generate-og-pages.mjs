@@ -67,9 +67,7 @@ const template = readFileSync(path.join(distDir, 'index.html'), 'utf8')
 
 for (const livery of liveries) {
   const title = `${livery.name} — Jumpy Whale Design`
-  const description = `${livery.team} livery for ${livery.game}${
-    livery.isItasha ? ' • Itasha' : ''
-  } — view photos on Jumpy Whale Design.`
+  const description = `View photos on Jumpy Whale Design.`
   const image = ikUrl(`liveries/${livery.photoName}_${livery.thumbnailImg}.jpg`, 1200, 80)
   const url = `${SITE_URL}/livery/${livery.id}`
 
