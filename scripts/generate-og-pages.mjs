@@ -11,7 +11,7 @@ import path from 'node:path'
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const distDir = path.join(root, 'dist')
 
-const SITE_URL = 'https://jumpywhale.com'
+const SITE_URL = 'https://design.jumpywhale.com'
 
 const envText = readFileSync(path.join(root, '.env'), 'utf8')
 const endpointMatch = envText.match(/VITE_IMAGEKIT_API_ENDPOINT\s*=\s*"?([^"\n]+)"?/)
