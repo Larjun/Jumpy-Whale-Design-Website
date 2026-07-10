@@ -25,6 +25,8 @@ export const LiveryTag = {
   NT: 'No Team',
   Itasha: 'Itasha',
   Meme: 'Meme',
+  DTS: 'DTS Academy',
+  OOFS: "Out Of Fuel Simracing"
 } as const
 
 export type LiveryTag = (typeof LiveryTag)[keyof typeof LiveryTag]
@@ -35,6 +37,8 @@ const TEAM_MAP: Record<string, LiveryTag> = {
   MHR: LiveryTag.MHR,
   OBDA: LiveryTag.OBDA,
   NT: LiveryTag.NT,
+  DTS: LiveryTag.DTS,
+  OOFS: LiveryTag.OOFS
 }
 
 const GAME_MAP: Record<string, LiveryTag> = {

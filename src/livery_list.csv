@@ -1,10 +1,14 @@
 id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeatured
+38,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_922,4,,1,TRUE
+37,2026,OOFS America Cadillac,OOFS,LMU,FALSE,oofs_lmu_caddyjr5,5,,3,FALSE
+36,2026,JWD Lamborghini SC63,JWD,LMU,FALSE,jwd_lmu_lambosc63_1,5,,5,FALSE
+35,2026,JWD BMW M-Hybrid V8,JWD,LMU,FALSE,jwd_lmu_lilsniffer_1,5,,5,TRUE
 34,2026,SRT Ferrari 296 GT3,SRT,IR,FALSE,srt_ir_ferrari_296_gt3_1,3,https://www.tradingpaints.com/showroom/view/1159567/SoarN-Racing-Team,3,TRUE
-33,2026,JWD Genesis GMR-01,JWD,LMU,FALSE,jwd_lmu_genesis_teal,6,https://www.racecontrol.gg/liveries/543686,2,TRUE
+33,2026,JWD Genesis GMR-01,JWD,LMU,FALSE,jwd_lmu_genesis_teal,6,https://www.racecontrol.gg/liveries/543686,2,FALSE
 32,2026,SRT Porsche 911 GT3 R 2026,SRT,IR,FALSE,srt_irg_porsche_1,5,https://www.tradingpaints.com/showroom/view/1063976/Soarn-Racing-Team-Porsche-2026,1,FALSE
 31,2026,SRT Porsche 911 GT3 R,SRT,LMU,FALSE,srt_lmu_porsche_992_col,6,,6,FALSE
 30,2026,SRT Ford Mustang GT3,SRT,LMU,FALSE,srt_lmu_mustang_1,3,,1,FALSE
-29,2026,JWD Aston Martin V8 Vantage Evo,JWD,LMU,FALSE,jwd_lmu_amrv8_1,5,https://www.racecontrol.gg/liveries/livery/6848ebf3401435e38a49e903/69e265ffb03abb44eb6b7574,1,TRUE
+29,2026,JWD Aston Martin V8 Vantage Evo,JWD,LMU,FALSE,jwd_lmu_amrv8_1,5,https://www.racecontrol.gg/liveries/livery/6848ebf3401435e38a49e903/69e265ffb03abb44eb6b7574,1,FALSE
 28,2026,JWD Ginetta G61-LT-P3,JWD,LMU,FALSE,jwd_lmu_ginetta_1,3,https://www.racecontrol.gg/liveries/livery/6848ebf3401435e38a49e903/6a28d0513ee67ab38ce9a866,1,FALSE
 27,2026,JWD Genesis GMR-01 Blackout,JWD,LMU,FALSE,jwd_lmu_genesis_black,5,https://www.racecontrol.gg/liveries/livery/6848ebf3401435e38a49e903/69cee5099b80cdfc08256fb8,2,FALSE
 26,2026,OBDA Italian Brain Rot - Bombardiro Crocadiro,OBDA,ACC,TRUE,mis_acc_ibrbc,5,,1,FALSE
