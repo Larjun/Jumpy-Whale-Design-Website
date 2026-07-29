@@ -1,4 +1,5 @@
 id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeatured
+39,2026,JWD Alpine A424 Evo,JWD,LMU,FALSE,jwd_lmu_alpine_2,8,,5,TRUE
 38,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_922,4,,1,TRUE
 37,2026,OOFS America Cadillac,OOFS,LMU,FALSE,oofs_lmu_caddyjr5,5,,3,FALSE
 36,2026,JWD Lamborghini SC63,JWD,LMU,FALSE,jwd_lmu_lambosc63_1,5,,5,FALSE
