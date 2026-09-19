@@ -1,8 +1,12 @@
 id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeatured
+45,2026,SRT Mclaren 720s GT3 Evo,SRT,LMU,FALSE,srt_lmu_macca_1,4,,3,FALSE
+44,2026,SRT BMW M4 GT3 Evo,SRT,LMU,FALSE,srt_bmw_gt3_lmu,4,,4,FALSE
+43,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_992_1,5,,5,TRUE
+42,2026,DTS Academy Aston Martin V8 Vantage Evo,DTS,LMU,FALSE,dts_aston_v8_1,4,,4,FALSE
 41,2026,JWD Genesis GMR-01 Arrow Design,JWD,LMU,FALSE,jwd_genesis_3,8,,2,TRUE
 40,2026,Artoria Pendragon Lancer - Fate Itasha,JWD,LMU,TRUE,jwd_lmu_beemer_saber,8,https://www.racecontrol.gg/liveries/616394,4,TRUE
 39,2026,JWD Alpine A424 Evo,JWD,LMU,FALSE,jwd_lmu_alpine_2,8,,5,TRUE
-38,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_922,4,,1,TRUE
+38,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_922,4,,1,FALSE
 37,2026,OOFS America Cadillac,OOFS,LMU,FALSE,oofs_lmu_caddyjr5,5,,3,FALSE
 36,2026,JWD Lamborghini SC63,JWD,LMU,FALSE,jwd_lmu_lambosc63_1,5,,5,FALSE
 35,2026,JWD BMW M-Hybrid V8,JWD,LMU,FALSE,jwd_lmu_lilsniffer_1,5,,5,FALSE
@@ -21,7 +25,7 @@ id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeature
 22,2025,SRT Ford Mustang GT3,SRT,ACC,FALSE,srt_acc_mustang_1,6,,1,FALSE
 21,2025,SRT Poverty Spec Rauh Peugeot 9X8 Evo,SRT,LMU,FALSE,srt_lmu_rauhpeugeot,4,,1,FALSE
 20,2025,MHR Mad Hatter,MHR,ACC,FALSE,mhr_acc_madhatter,6,,1,FALSE
-19,2025,MHR Ferrari 550 Retro,MHR,ACC,FALSE,mhr_acc_550Fezza,6,,5,TRUE
+19,2025,MHR Ferrari 550 Retro,MHR,ACC,FALSE,mhr_acc_550Fezza,6,,5,FALSE
 18,2025,MHR Leyton House,MHR,ACC,FALSE,mhr_acc_leytonhouse,7,,2,FALSE
 17,2025,SRT Tegridy Farms,SRT,ACC,FALSE,srt_acc_tegridy,6,,4,TRUE
 16,2025,MHR Turtles,MHR,ACC,FALSE,mhr_acc_turtles,6,,5,FALSE
