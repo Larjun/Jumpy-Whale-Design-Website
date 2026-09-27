@@ -1,4 +1,12 @@
 id,year,name,team,game,isItasha,photoName,photoCount,link,thumbnailImg,isFeatured
+53,2024,MHR Genshin Raiden Shogun Honda NSX GT3,MHR,ACC,TRUE,mhr_acc_honda_raiden,6,,2,FALSE
+52,2024,MHR Genshin Xianyun Honda NSX GT3,MHR,ACC,TRUE,mhr_acc_honda_xianyun,5,,3,FALSE
+51,2023,Black Hanekawa Nissan GTR GT3,OTHER,ACC,TRUE,mhr_acc_nissan_hanekawa,6,,3,FALSE
+50,2023,JWD Saber Alter Porsche 911 GT3 R,JWD,ACC,TRUE,jwd_acc_porsche_saber_2,5,,1,FALSE
+49,2023,JWD Saber Porsche 911 GT3 R,JWD,ACC,TRUE,jwd_acc_porsche_saber_1,5,,1,FALSE
+48,2026,JWD Makina Erina McLaren 720s GT3 Evo,JWD,LMU,TRUE,jwd_lmu_makilaren,6,,1,FALSE
+47,2026,JWD Mercedes AMG GT3 Evo,JWD,LMU,FALSE,jwd_lmu_mercedes_1,5,,2,FALSE
+46,2026,SRT Ferrari 296 GT3 Evo,SRT,LMU,FALSE,srt_lmu_ferrar296_1,6,,1,FALSE
 45,2026,SRT Mclaren 720s GT3 Evo,SRT,LMU,FALSE,srt_lmu_macca_1,4,,3,FALSE
 44,2026,SRT BMW M4 GT3 Evo,SRT,LMU,FALSE,srt_bmw_gt3_lmu,4,,4,FALSE
 43,2026,DTS Academy Porsche 992 GT3 R,DTS,LMU,FALSE,dts_lmu_porsche_992_1,5,,5,TRUE
